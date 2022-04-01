@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    runs-on: [linux, windows]
+    runs-on: [linux]
 
     steps:
       - uses: actions/checkout@v3
