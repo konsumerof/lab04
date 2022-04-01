@@ -26,6 +26,5 @@ jobs:
          cmake -H. -B_build
          cmake --build _build
          cmake --build _build --target solver
-         ./_build/solver
          echo "Solver application testing is done"
          cd ..
