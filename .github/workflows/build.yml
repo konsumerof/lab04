@@ -12,7 +12,7 @@ jobs:
       - name: build hello_world_application
         shell: bash
         run: |
-         cd .hello_world_application
+         cd hello_world_application
          cmake -H. -B_build
          cmake --build _build
          cmake --build _build --target hello_world
@@ -23,7 +23,7 @@ jobs:
       - name: build solver_application
         shell: bash
         run: |
-         cd .solver_application
+         cd solver_application
          cmake -H. -B_build
          cmake --build _build
          cmake --build _build --target hello_world
