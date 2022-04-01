@@ -1,0 +1,32 @@
+name: build-check
+
+on: push
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build hello_world_application
+        shell: bash
+        run: |
+         cd hello_world_application
+         cmake -H. -B_build
+         cmake --build _build
+         cmake --build _build --target hello_world
+         ./_build/hello_world
+         echo "Hello world application testing is done"
+         cd ..
+         
+      - name: build solver_application
+        shell: bash
+        run: |
+         cd solver_application
+         cmake -H. -B_build
+         cmake --build _build
+         cmake --build _build --target hello_world
+         ./_build/hello_world
+         echo "Solver application testing is done"
+         cd ..
